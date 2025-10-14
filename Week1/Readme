@@ -1,0 +1,20 @@
+# Advanced Password Strength Checker
+
+Welcome to Week 1 of my **#52Weeks52CyberProjects** challenge!  
+This project is a Python-based password strength checker that evaluates password security using entropy, character diversity, and common password detection.
+
+##  Features
+-  Checks for uppercase, lowercase, digits, and special characters
+-  Estimates entropy and rates password strength
+-  Flags common passwords using a customizable wordlist (`common.txt`)
+-  Provides actionable feedback to improve weak passwords
+
+## 📊 Entropy-Based Strength Ratings
+| Entropy Range | Strength      |
+|---------------|---------------|
+| < 28          | Very Weak     |
+| 28–35         | Weak          |
+| 36–59         | Moderate      |
+| 60–79         | Strong        |
+| ≥ 80          | Very Strong   |
+
