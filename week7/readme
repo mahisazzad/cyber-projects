@@ -1,0 +1,67 @@
+Here’s your Week 7 deliverable, Mahi — both the LinkedIn post and a polished README for your GitHub repo:
+
+---
+
+# 🛡️ Python Web Vulnerability Scanner
+
+This Week 7 project in the #52Weeks52CyberProjects series is a Python-based web vulnerability scanner that checks a target URL for common security issues. It uses crafted payloads to test for SQL Injection, XSS, Open Redirects, Directory Traversal, and missing HTTP security headers.
+
+---
+
+## 📦 Features
+
+- Detects:
+  - SQL Injection (`' OR '1'='1`)
+  - Cross-Site Scripting (XSS)
+  - Open Redirects
+  - Directory Traversal (`../../etc/passwd`)
+- Checks for missing security headers:
+  - Content-Security-Policy
+  - X-Frame-Options
+  - Strict-Transport-Security
+  - X-Content-Type-Options
+  - Referrer-Policy
+  - Permissions-Policy
+- Outputs results in JSON format
+- Simple CLI interface using `argparse`
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mahisazzad/52-Week-52-cyber-projects.git
+cd 52-Week-52-cyber-projects/Week7
+```
+
+### 2. Install dependencies
+
+```bash
+pip install requests beautifulsoup4
+```
+
+### 3. Run the scanner
+
+```bash
+python scanner.py --url "http://example.com/page?param=value"
+```
+
+---
+
+## 📁 File Overview
+
+| File        | Purpose                                |
+|-------------|----------------------------------------|
+| `scanner.py`| Main script to scan a target URL       |
+
+---
+
+## ⚠️ Notes
+
+- This tool is for **educational and ethical use only**  
+- Only test URLs you own or have permission to scan  
+- Designed for basic vulnerability detection — not a replacement for full-scale scanners
+
+
