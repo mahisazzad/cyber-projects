@@ -1,0 +1,1 @@
+[{"author":"Mahi","text":"<script>alert('Stored XSS')<\/script>"},{"author":"Mahin","text":"<script>alert('Stored XSS')<\/script>"}]
