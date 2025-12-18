@@ -1,0 +1,86 @@
+
+# 🛡️ Minimal Malware Signature Scanner
+
+A lightweight, YARA‑like malware signature scanner written in Python.  
+This project demonstrates how to detect suspicious files using simple byte patterns and safe test strings.
+
+---
+
+## ✨ Features
+- Define signatures directly in code (no external rule files needed).
+- Detects:
+  - Custom string patterns (e.g., `User-Agent: EvilBot`)
+  - Safe demo signatures (e.g., `FAKE-EICAR-STRING`)
+- Scans entire directories recursively.
+- Prints clear match results.
+
+---
+
+## 📂 Project Structure
+```
+malware_scanner/
+├─ scanner.py        # Main scanner script
+└─ samples/          # Test files
+   ├─ benign.txt
+   ├─ suspicious.txt
+   └─ fake_eicar.txt
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone or download
+```bash
+git clone https://github.com/your-username/malware-scanner.git
+cd malware-scanner
+```
+
+### 2. Create sample files
+```powershell
+# Benign file
+'hello world' | Out-File -Encoding ascii .\samples\benign.txt
+
+# Suspicious file
+'User-Agent: EvilBot' | Out-File -Encoding ascii .\samples\suspicious.txt
+
+# Fake EICAR file (safe substitute)
+'FAKE-EICAR-STRING' | Out-File -Encoding ascii .\samples\fake_eicar.txt
+```
+
+### 3. Run the scanner
+```bash
+python scanner.py
+```
+
+---
+
+## ✅ Example Output
+```
+[MATCH] samples\suspicious.txt -> ['SuspiciousAgent']
+[MATCH] samples\fake_eicar.txt -> ['Fake_EICAR_Test']
+```
+
+---
+
+## ⚠️ Important Notes
+- This project uses a **fake EICAR string** (`FAKE-EICAR-STRING`) to avoid antivirus interference.  
+- Do **not** use real malware samples — this scanner is for **educational and demo purposes only**.  
+- Extend it safely with regex, hex patterns, or entropy checks if you want more advanced detection.
+
+---
+
+## 📖 Next Steps
+- Add regex support to detect URLs.
+- Implement hex pattern matching with wildcards.
+- Move signatures into external YAML/JSON rule files.
+- Add CLI arguments (`--path`, `--json`) for flexibility.
+
+---
+
+## 🧑‍💻 Author
+Built by **Mahi** as part of a cybersecurity learning project.  
+Focus: modular, reproducible, and safe malware detection demos.
+```
+
+
