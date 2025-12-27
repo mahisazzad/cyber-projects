@@ -1,0 +1,80 @@
+
+
+## 🔎 Minimal Log Analyzer (Python)
+
+A simple Python tool that reads system or web logs, counts error codes, and flags IPs with repeated failures. This project demonstrates how log parsing can be used to detect anomalies such as brute‑force attempts or misconfigured endpoints.
+
+---
+
+## 🚀 Features
+- ✅ Reads plain text log files line by line  
+- 🔐 Detects repeated failures (status codes ≥ 400)  
+- 📊 Summarizes error counts by status code  
+- 🧠 Flags IPs with multiple failures  
+- 🗂️ Works with sample Apache/Nginx‑style logs  
+
+---
+
+## 🛠️ Tech Stack
+- **Python 3.10+**
+- **Standard Library** (`collections`, `open`)
+- **Sample log file** (`access.log`)
+
+---
+
+## ⚙️ Setup Instructions
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/log-analyzer.git
+   cd log-analyzer
+   ```
+2. Create a virtual environment:
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate   # Windows
+   ```
+3. Add a sample log file (`access.log`) with entries like:
+   ```
+   203.0.113.10 - - [27/Dec/2025:17:31:00] "POST /login" 401
+   198.51.100.7  - - [27/Dec/2025:17:32:44] "GET /admin" 404
+   ```
+4. Run the analyzer:
+   ```bash
+   python log_analyzer.py
+   ```
+
+---
+
+## 📊 Example Output
+```
+=== Status counts ===
+401: 2
+404: 1
+500: 1
+
+=== IPs with repeated failures ===
+203.0.113.10: 2 failures
+```
+
+---
+
+## 📸 Demo Screenshots
+- Terminal output showing error counts and flagged IPs  
+- Sample log file entries used for testing  
+
+---
+
+## 🧠 Why it matters
+Log analysis is the backbone of incident detection. Even a minimal parser can highlight suspicious activity, repeated failures, or spikes in errors — the first step toward building SIEM‑like monitoring.
+
+---
+
+## 📂 File Structure
+```
+log-analyzer/
+├── access.log        # Sample log file
+├── log_analyzer.py   # Analyzer script
+└── README.md         # Documentation
+```
+
+
